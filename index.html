@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verity Channels</title>
+  <meta name="description" content="Verity Channels — connect, share, and build together." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow glow-a"></div>
+  <div class="bg-glow glow-b"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="logo">V</span>
+      <span>VERITY</span>
+      <small>CHANNELS</small>
+    </a>
+    <div class="top-actions">
+      <button class="ghost" id="signInBtn">Sign in</button>
+      <button class="primary" id="joinBtn">Enter Channels</button>
+    </div>
+  </header>
+
+  <main id="landing">
+    <section class="hero">
+      <div class="badge">● VERITY SOCIAL</div>
+      <h1>Your AI Assistant.<br><span>Your Channels.</span> Your World.</h1>
+      <p>Create communities, share ideas, collaborate with others, and let Verity help keep every conversation organized.</p>
+      <div class="hero-actions">
+        <button class="primary large" id="heroEnter">Enter Verity Channels →</button>
+        <button class="ghost large" id="learnBtn">Explore channels</button>
+      </div>
+    </section>
+
+    <section class="feature-grid">
+      <article><div class="feature-icon blue">▢</div><h3>Create Channels</h3><p>Start a new community in seconds.</p></article>
+      <article><div class="feature-icon purple">♟</div><h3>Invite Others</h3><p>Bring friends, teams, or communities together.</p></article>
+      <article><div class="feature-icon teal">☷</div><h3>Share Content</h3><p>Post text, links, images, and files.</p></article>
+      <article><div class="feature-icon orange">♧</div><h3>Stay Connected</h3><p>Follow conversations and get updates.</p></article>
+    </section>
+  </main>
+
+  <main id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="side-brand"><span class="mini-logo">V</span><b>VERITY</b></div>
+      <nav>
+        <button class="nav-item">💬 <span>Chat</span></button>
+        <button class="nav-item active">👥 <span>Channels</span></button>
+        <button class="nav-item">📅 <span>Calendar</span></button>
+        <button class="nav-item">📁 <span>Files</span></button>
+        <button class="nav-item">⚙️ <span>Settings</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="status-dot"></div>
+        <div><b>Verity</b><small>AI online</small></div>
+      </div>
+    </aside>
+
+    <section class="channel-list">
+      <div class="list-head">
+        <div>
+          <p class="eyebrow">COMMUNITIES</p>
+          <h2>Channels</h2>
+        </div>
+        <button class="primary" id="createBtn">＋ Create Channel</button>
+      </div>
+
+      <div class="search"><span>⌕</span><input id="search" placeholder="Search channels..." /></div>
+      <div class="tabs">
+        <button class="tab active" data-filter="all">All</button>
+        <button class="tab" data-filter="mine">My Channels</button>
+        <button class="tab" data-filter="joined">Joined</button>
+        <button class="tab" data-filter="popular">Popular</button>
+      </div>
+      <div id="cards" class="cards"></div>
+    </section>
+
+    <section class="channel-panel">
+      <div class="panel-empty" id="panelEmpty">
+        <div class="panel-logo">V</div>
+        <h2>Select a channel</h2>
+        <p>Choose a community to view its conversation.</p>
+      </div>
+      <div id="channelView" class="channel-view hidden">
+        <div class="channel-header">
+          <button class="back-mobile" id="backBtn">←</button>
+          <div class="channel-title">
+            <div class="channel-avatar" id="viewIcon">✦</div>
+            <div><h2 id="viewName"></h2><p id="viewDesc"></p></div>
+          </div>
+          <button class="icon-btn">•••</button>
+        </div>
+        <div class="feed" id="feed"></div>
+        <div class="composer">
+          <input id="postInput" placeholder="Share something..." />
+          <button id="postBtn" class="send">➤</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal hidden" id="modal">
+    <div class="modal-card">
+      <button class="close" id="closeModal">×</button>
+      <p class="eyebrow">NEW COMMUNITY</p>
+      <h2>Create a channel</h2>
+      <input id="newName" placeholder="Channel name" />
+      <input id="newDesc" placeholder="What is this channel about?" />
+      <select id="newIcon"><option>✦</option><option>💬</option><option>🧠</option><option>🚀</option><option>🎨</option><option>🎮</option></select>
+      <button class="primary full" id="saveChannel">Create Channel</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
